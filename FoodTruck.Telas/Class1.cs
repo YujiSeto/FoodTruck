@@ -8,5 +8,6 @@ namespace FoodTruck.Telas
 {
     public class Class1
     {
+        //Inicio
     }
 }
