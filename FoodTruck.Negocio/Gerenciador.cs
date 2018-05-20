@@ -24,9 +24,27 @@ namespace FoodTruck.Negocio
 
         public void AdicionarCliente(Cliente clienteAdicionado)
         {
-            //Validações
+            if (String.IsNullOrEmpty(clienteAdicionado.Nome))
+            {
+                return;
+            }
+
+            if (String.IsNullOrEmpty(clienteAdicionado.Email))
+            {
+                return;
+            }
+
             this.Clientes.Add(clienteAdicionado);
         }
 
+        public List<Cliente> TodosOsClientes()
+        {
+            return this.Clientes.ToList();
+        }
+
+        public void AdicionarLanche(Lanche lancheAdicionado)
+        {
+            this.Lanches.Add(lancheAdicionado);
+        }
     }
 }
