@@ -52,8 +52,19 @@ namespace FoodTruck.Telas
             Console.WriteLine("Informe o E-mail:");
             novoCliente.Email = Console.ReadLine();
 
-            gerenciador.AdicionarCliente(novoCliente);
-            Console.WriteLine("Cliente cadastrado com Sucesso!");
+            Validacao validacao = gerenciador.AdicionarCliente(novoCliente);
+            if (validacao.Valido)
+            {
+                Console.WriteLine("Cliente cadastrado com Sucesso!");
+            }
+            else
+            {
+                foreach(var key in validacao.Mensagens.Keys)
+                {
+                    String mensagem = validacao.Mensagens[key];
+                    Console.WriteLine($"{key}: {mensagem}");
+                }
+            }
             Console.ReadLine();
         }
         
