@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FoodTruck.Negocio.Models
 {
-    class Lanche
+    public class Lanche
     {
+        public long Id { get; set; }
+        public String Nome { get; set; }
+        public Decimal Valor { get; set; }
     }
 }
