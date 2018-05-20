@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoodTruck.Negocio.Models
 {
-    class Cliente
+    public class Cliente
     {
+        public long Id { get; set; }
+        public String CPF { get; set; }
+        public String Nome { get; set; }
+        public String Email { get; set; }
     }
 }
