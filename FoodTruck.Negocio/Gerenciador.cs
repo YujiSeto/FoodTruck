@@ -14,7 +14,8 @@ namespace FoodTruck.Negocio
 
         public Gerenciador()
         {
-
+            Bebida bebida = new Bebida();
+            Lanche lanche = new Lanche();
         }
 
         public Validacao AdicionarCliente(Cliente clienteAdicionado)

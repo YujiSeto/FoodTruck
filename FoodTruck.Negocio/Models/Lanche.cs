@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoodTruck.Negocio.Models
 {
-    public class Lanche
+    public class Lanche : Produto
     {
-        public long Id { get; set; }
-        public String Nome { get; set; }
-        public Decimal Valor { get; set; }
+        public override string Descrever()
+        {
+            return String.Format($"{ this.Id} - {this.Nome} - {this.Valor}");   
+        }
     }
 }

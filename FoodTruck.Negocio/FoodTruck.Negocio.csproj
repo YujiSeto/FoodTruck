@@ -45,6 +45,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Lanche.cs" />
     <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Persistencia\Banco.cs" />
     <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
