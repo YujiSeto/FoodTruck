@@ -12,5 +12,10 @@ namespace FoodTruck.Negocio.Models
         public String CPF { get; set; }
         public String Nome { get; set; }
         public String Email { get; set; }
+
+        public String Descrever()
+        {
+            return String.Format($"{this.CPF} - {this.Nome} - {this.Email}");
+        }
     }
 }
