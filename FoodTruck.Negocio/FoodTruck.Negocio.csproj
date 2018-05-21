@@ -52,11 +52,5 @@
     <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\FoodTruck.Persistencia\FoodTruck.Persistencia.csproj">
-      <Project>{d665223f-fc4d-4cfa-b722-ff9ebf3a53d0}</Project>
-      <Name>FoodTruck.Persistencia</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

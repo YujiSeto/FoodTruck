@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodTruck.Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +17,84 @@ namespace FoodTruck.Grafico
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void AbreTelaInclusaoAlteracao(Cliente clienteSelecionado)
         {
             ManterCliente tela = new ManterCliente();
             tela.MdiParent = this.MdiParent;
+            tela.ClienteSelecionado = clienteSelecionado;
+            tela.FormClosed += Tela_FormClosed;
             tela.Show();
+        }
 
+        private void btAdicionar_Click(object sender, EventArgs e)
+        {
+            AbreTelaInclusaoAlteracao(null);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Tela_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregarClientes();
+        }
+
+        private bool VerificarSelecao()
+        {
+            if (dgClientes.SelectedRows.Count <=0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
+        }
+
+        private void CarregarClientes()
+        {
+            dgClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgClientes.MultiSelect = false;
+            dgClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgClientes.AutoGenerateColumns = false;
+            List<Cliente> clientes = Program.Gerenciador.TodosOsClientes();
+            dgClientes.DataSource = clientes;
+        }
+
+        private void TelaListaClientes_Load(object sender, EventArgs e)
+        {
+            CarregarClientes();
+        }
+
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            if(VerificarSelecao())
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
+                if (resultado == DialogResult.OK)
+                {
+                    Cliente clienteSelecionado = (Cliente)dgClientes.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverCliente(clienteSelecionado);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Cliente removido com sucesso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um problema ao remover o cliente");
+                    }
+                    CarregarClientes();
+                }
+            }
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                Cliente clienteSelecionado = (Cliente)dgClientes.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(clienteSelecionado);
+            }
         }
     }
 }

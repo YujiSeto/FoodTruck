@@ -14,6 +14,8 @@ namespace FoodTruck.Grafico
 {
     public partial class ManterCliente : Form
     {
+        public Cliente ClienteSelecionado { get; set; }
+
         public ManterCliente()
         {
             InitializeComponent();
@@ -21,12 +23,28 @@ namespace FoodTruck.Grafico
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            Cliente novoCliente = new Cliente();
-            novoCliente.Id = Convert.ToInt64(tbId.Text);
-            novoCliente.CPF = tbCpf.Text;
-            novoCliente.Nome = tbNome.Text;
-            novoCliente.Email = tbEmail.Text;
-            Validacao validacao = Program.Gerenciador.AdicionarCliente(novoCliente);
+            Cliente cliente = new Cliente();
+            if(Int64.TryParse(tbId.Text, out long value))
+            {
+                cliente.Id = value;
+            }
+            else
+            {
+                cliente.Id = -1;
+            }
+            cliente.CPF = tbCpf.Text;
+            cliente.Nome = tbNome.Text;
+            cliente.Email = tbEmail.Text;
+
+            Validacao validacao;
+            if (ClienteSelecionado == null)
+            {
+               validacao = Program.Gerenciador.AdicionarCliente(cliente);
+            }
+            else
+            {
+                validacao = Program.Gerenciador.AlterarCliente(cliente);
+            }
 
             
             if (!validacao.Valido)
@@ -39,6 +57,32 @@ namespace FoodTruck.Grafico
                     mensagemValidacao += Environment.NewLine;
                 }
                 MessageBox.Show(mensagemValidacao);
+            }
+            else
+            {
+                MessageBox.Show("Cliente salvo com sucesso");
+                this.Close();
+            }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ManterCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManterCliente_Shown(object sender, EventArgs e)
+        {
+            if(ClienteSelecionado != null)
+            {
+                this.tbId.Text = ClienteSelecionado.Id.ToString();
+                this.tbNome.Text = ClienteSelecionado.Nome;
+                this.tbCpf.Text = ClienteSelecionado.CPF;
+                this.tbEmail.Text = ClienteSelecionado.Email;
             }
         }
     }
