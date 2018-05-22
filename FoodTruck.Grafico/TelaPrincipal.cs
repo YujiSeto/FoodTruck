@@ -110,5 +110,12 @@ namespace FoodTruck.Grafico
             tela.MdiParent = this;
             tela.Show();
         }
+
+        private void bebidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaListaBebidas tela = new TelaListaBebidas();
+            tela.MdiParent = this;
+            tela.Show();
+        }
     }
 }
