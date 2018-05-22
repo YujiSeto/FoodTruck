@@ -12,6 +12,24 @@ namespace FoodTruck.Negocio
     {
         private Banco banco = new Banco();
 
+        public Validacao RemoverLanche(Lanche lanche)
+        {
+            Validacao validacao = new Validacao();
+            banco.Lanches.Remove(lanche);
+            banco.SalvarDados();
+            return validacao;
+        }
+
+        public Validacao AlterarLanche(Lanche LancheAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Lanche lancheBanco = BuscaLanchePorId(LancheAlterado.Id);
+            lancheBanco.Nome = LancheAlterado.Nome;
+            lancheBanco.Valor = LancheAlterado.Valor;
+            this.banco.SalvarDados();
+            return validacao;
+        }
+
         public Validacao RemoverBebida(Bebida bebida)
         {
             Validacao validacao = new Validacao();
@@ -208,6 +226,11 @@ namespace FoodTruck.Negocio
         public Bebida BuscaBebidaPorId(long id2)
         {
             return this.banco.Bebidas.Where(d => d.Id == id2).FirstOrDefault();
+        }
+
+        public Lanche BuscaLanchePorId(long id3)
+        {
+            return this.banco.Lanches.Where(e => e.Id == id3).FirstOrDefault();
         }
 
         public List<Cliente> TodosOsClientes()

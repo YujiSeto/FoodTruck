@@ -32,6 +32,7 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.bebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lanchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -69,7 +70,8 @@
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.bebidasToolStripMenuItem});
+            this.bebidasToolStripMenuItem,
+            this.lanchesToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -80,6 +82,13 @@
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // bebidasToolStripMenuItem
+            // 
+            this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
+            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.bebidasToolStripMenuItem.Text = "Bebidas";
+            this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.bebidasToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -176,12 +185,12 @@
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
-            // bebidasToolStripMenuItem
+            // lanchesToolStripMenuItem
             // 
-            this.bebidasToolStripMenuItem.Name = "bebidasToolStripMenuItem";
-            this.bebidasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.bebidasToolStripMenuItem.Text = "Bebidas";
-            this.bebidasToolStripMenuItem.Click += new System.EventHandler(this.bebidasToolStripMenuItem_Click);
+            this.lanchesToolStripMenuItem.Name = "lanchesToolStripMenuItem";
+            this.lanchesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.lanchesToolStripMenuItem.Text = "Lanches";
+            this.lanchesToolStripMenuItem.Click += new System.EventHandler(this.lanchesToolStripMenuItem_Click);
             // 
             // TelaPrincipal
             // 
@@ -193,7 +202,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TelaPrincipal";
             this.Text = "TelaPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -227,6 +236,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripMenuItem bebidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lanchesToolStripMenuItem;
     }
 }
 
