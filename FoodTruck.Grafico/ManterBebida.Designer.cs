@@ -49,6 +49,7 @@
             this.btCancelar.TabIndex = 19;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btSalvar
             // 
@@ -158,6 +159,8 @@
             this.Controls.Add(this.label1);
             this.Name = "ManterBebida";
             this.Text = "ManterBebida";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.ManterBebida_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

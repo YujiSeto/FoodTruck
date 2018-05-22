@@ -14,6 +14,8 @@ namespace FoodTruck.Grafico
 {
     public partial class ManterBebida : Form
     {
+        public Bebida BebidaSelecionada { get; set; }
+
         public ManterBebida()
         {
             InitializeComponent();
@@ -21,14 +23,23 @@ namespace FoodTruck.Grafico
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            Bebida novaBebida = new Bebida();
-            novaBebida.Id = Convert.ToInt64(tbId.Text);
-            novaBebida.Nome = tbNome.Text;
-            novaBebida.Valor = Convert.ToDecimal(tbValor.Text);
-            novaBebida.Tamanho = Convert.ToSingle(tbTamanho.Text);
-            Validacao validacao = Program.Gerenciador.CadastrarBebida(novaBebida);
+            Bebida bebida = new Bebida();
 
-            
+            bebida.Id = Convert.ToInt64(tbId.Text);
+            bebida.Nome = tbNome.Text;
+            bebida.Valor = Convert.ToDecimal(tbValor.Text);
+            bebida.Tamanho = Convert.ToSingle(tbTamanho.Text);
+
+            Validacao validacao;
+            if (BebidaSelecionada == null)
+            {
+                validacao = Program.Gerenciador.CadastrarBebida(bebida);
+            }
+            else
+            {
+                validacao = Program.Gerenciador.AlterarBebida(bebida);
+            }
+
             if (!validacao.Valido)
             {
                 String mensagemValidacao = "";
@@ -39,6 +50,27 @@ namespace FoodTruck.Grafico
                     mensagemValidacao += Environment.NewLine;
                 }
                 MessageBox.Show(mensagemValidacao);
+            }
+            else
+            {
+                MessageBox.Show("Bebida salva com sucesso!");
+                this.Close();
+            }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ManterBebida_Shown(object sender, EventArgs e)
+        {
+            if (BebidaSelecionada != null)
+            {
+                this.tbId.Text = BebidaSelecionada.Id.ToString();
+                this.tbNome.Text = BebidaSelecionada.Nome;
+                this.tbValor.Text = BebidaSelecionada.Valor.ToString();
+                this.tbTamanho.Text = BebidaSelecionada.Tamanho.ToString();
             }
         }
     }
