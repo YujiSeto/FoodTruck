@@ -212,7 +212,6 @@ namespace FoodTruck.Negocio
                     validacao.Mensagens.Add("bebida", "$Não existe nenhuma bebida cadastrada em um dos códigos informados");
                 }
             }
-
             this.banco.Pedidos.Add(pedidoCadastrado);
             this.banco.SaveChanges();
             return validacao;

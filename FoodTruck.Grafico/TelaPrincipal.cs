@@ -124,5 +124,12 @@ namespace FoodTruck.Grafico
             tela.MdiParent = this;
             tela.Show();
         }
+
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdicionaPedido tela = new AdicionaPedido();
+            tela.MdiParent = this;
+            tela.Show();
+        }
     }
 }
