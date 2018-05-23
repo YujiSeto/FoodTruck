@@ -15,6 +15,14 @@ namespace FoodTruck.Negocio.Models
         public String Nome { get; set; }
         public String Email { get; set; }
 
+        [NotMapped]
+        public String Descricao
+        {
+            get
+            {
+                return this.CPF + " - " + this.Nome;
+            }
+        }
         public String Descrever()
         {
             return String.Format($"{this.CPF} - {this.Nome} - {this.Email}");
