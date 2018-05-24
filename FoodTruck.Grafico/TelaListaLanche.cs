@@ -92,5 +92,10 @@ namespace FoodTruck.Grafico
                 AbreTelaInclusaoAlteracao(lancheSelecionado);
             }
         }
+
+        private void dgLanches_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

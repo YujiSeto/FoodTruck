@@ -50,12 +50,13 @@
             this.Nome,
             this.Valor,
             this.Tamanho});
-            this.dgBebidas.Location = new System.Drawing.Point(13, 62);
-            this.dgBebidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgBebidas.Location = new System.Drawing.Point(10, 50);
+            this.dgBebidas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgBebidas.Name = "dgBebidas";
             this.dgBebidas.RowTemplate.Height = 24;
-            this.dgBebidas.Size = new System.Drawing.Size(775, 377);
+            this.dgBebidas.Size = new System.Drawing.Size(581, 306);
             this.dgBebidas.TabIndex = 7;
+            this.dgBebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBebidas_CellContentClick);
             // 
             // Id
             // 
@@ -83,10 +84,10 @@
             // 
             // btAlterar
             // 
-            this.btAlterar.Location = new System.Drawing.Point(203, 12);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAlterar.Location = new System.Drawing.Point(152, 10);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(89, 43);
+            this.btAlterar.Size = new System.Drawing.Size(67, 35);
             this.btAlterar.TabIndex = 6;
             this.btAlterar.Text = "Alterar";
             this.btAlterar.UseVisualStyleBackColor = true;
@@ -94,10 +95,10 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(107, 12);
-            this.btRemover.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btRemover.Location = new System.Drawing.Point(80, 10);
+            this.btRemover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btRemover.Name = "btRemover";
-            this.btRemover.Size = new System.Drawing.Size(89, 43);
+            this.btRemover.Size = new System.Drawing.Size(67, 35);
             this.btRemover.TabIndex = 5;
             this.btRemover.Text = "Remover";
             this.btRemover.UseVisualStyleBackColor = true;
@@ -105,10 +106,10 @@
             // 
             // btAdicionar
             // 
-            this.btAdicionar.Location = new System.Drawing.Point(12, 12);
-            this.btAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAdicionar.Location = new System.Drawing.Point(9, 10);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(89, 43);
+            this.btAdicionar.Size = new System.Drawing.Size(67, 35);
             this.btAdicionar.TabIndex = 4;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
@@ -116,13 +117,14 @@
             // 
             // TelaListaBebidas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dgBebidas);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TelaListaBebidas";
             this.Text = "TelaListaBebidas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
