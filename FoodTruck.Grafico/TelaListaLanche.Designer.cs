@@ -49,7 +49,7 @@
             this.Nome,
             this.Valor});
             this.dgLanches.Location = new System.Drawing.Point(10, 50);
-            this.dgLanches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgLanches.Margin = new System.Windows.Forms.Padding(2);
             this.dgLanches.Name = "dgLanches";
             this.dgLanches.RowTemplate.Height = 24;
             this.dgLanches.Size = new System.Drawing.Size(581, 306);
@@ -77,7 +77,7 @@
             // btAlterar
             // 
             this.btAlterar.Location = new System.Drawing.Point(152, 10);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
             this.btAlterar.Name = "btAlterar";
             this.btAlterar.Size = new System.Drawing.Size(67, 35);
             this.btAlterar.TabIndex = 10;
@@ -88,7 +88,7 @@
             // btRemover
             // 
             this.btRemover.Location = new System.Drawing.Point(80, 10);
-            this.btRemover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btRemover.Margin = new System.Windows.Forms.Padding(2);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(67, 35);
             this.btRemover.TabIndex = 9;
@@ -99,7 +99,7 @@
             // btAdicionar
             // 
             this.btAdicionar.Location = new System.Drawing.Point(9, 10);
-            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(67, 35);
             this.btAdicionar.TabIndex = 8;
@@ -116,10 +116,9 @@
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TelaListaLanche";
             this.Text = "TelaListaLanche";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaListaLanche_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).EndInit();
             this.ResumeLayout(false);

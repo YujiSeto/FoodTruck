@@ -30,7 +30,7 @@ namespace FoodTruck.Grafico
 
         private void CarregaTotal()
         {
-            lbTotal.Text = pedido.ValorTotal().ToString();
+            lbTotal.Text = pedido.ValorTotal.ToString();
         }
 
         private void CarregaComboBoxes()
@@ -50,9 +50,15 @@ namespace FoodTruck.Grafico
 
         private void CarregaDatagrids()
         {
+            dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgBebidas.MultiSelect = false;
+            dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgBebidas.AutoGenerateColumns = false;
             dgBebidas.DataSource = pedido.Bebidas.ToList();
 
+            dgLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgLanches.MultiSelect = false;
+            dgLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgLanches.AutoGenerateColumns = false;
             dgLanches.DataSource = pedido.Lanches.ToList();
 
@@ -81,6 +87,7 @@ namespace FoodTruck.Grafico
             if (validacao.Valido)
             {
                 MessageBox.Show("Pedido cadastrado com sucesso!");
+                this.Close();
             }
             else
             {
@@ -91,6 +98,11 @@ namespace FoodTruck.Grafico
                 }
                 MessageBox.Show(msg, "Erro");
             }
+        }
+
+        private void dgBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
