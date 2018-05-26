@@ -73,5 +73,12 @@ namespace FoodTruck.Grafico
                 }
             }
         }
+
+        private void btAdicionar_Click(object sender, EventArgs e)
+        {
+            AdicionaPedido tela = new AdicionaPedido();
+            tela.MdiParent = this.MdiParent;
+            tela.Show();
+        }
     }
 }

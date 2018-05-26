@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.dgListaPedidos = new System.Windows.Forms.DataGridView();
-            this.btAlterar = new System.Windows.Forms.Button();
-            this.btRemover = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btAlterar = new System.Windows.Forms.Button();
+            this.btRemover = new System.Windows.Forms.Button();
+            this.btAdicionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,27 +57,6 @@
             this.dgListaPedidos.Size = new System.Drawing.Size(778, 392);
             this.dgListaPedidos.TabIndex = 14;
             this.dgListaPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaPedidos_CellContentClick);
-            // 
-            // btAlterar
-            // 
-            this.btAlterar.Location = new System.Drawing.Point(153, 9);
-            this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
-            this.btAlterar.Name = "btAlterar";
-            this.btAlterar.Size = new System.Drawing.Size(67, 35);
-            this.btAlterar.TabIndex = 13;
-            this.btAlterar.Text = "Alterar";
-            this.btAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btRemover
-            // 
-            this.btRemover.Location = new System.Drawing.Point(81, 9);
-            this.btRemover.Margin = new System.Windows.Forms.Padding(2);
-            this.btRemover.Name = "btRemover";
-            this.btRemover.Size = new System.Drawing.Size(67, 35);
-            this.btRemover.TabIndex = 12;
-            this.btRemover.Text = "Remover";
-            this.btRemover.UseVisualStyleBackColor = true;
-            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
             // Id
             // 
@@ -102,11 +82,44 @@
             this.Valor.HeaderText = "Valor";
             this.Valor.Name = "Valor";
             // 
+            // btAlterar
+            // 
+            this.btAlterar.Location = new System.Drawing.Point(153, 9);
+            this.btAlterar.Margin = new System.Windows.Forms.Padding(2);
+            this.btAlterar.Name = "btAlterar";
+            this.btAlterar.Size = new System.Drawing.Size(67, 35);
+            this.btAlterar.TabIndex = 13;
+            this.btAlterar.Text = "Alterar";
+            this.btAlterar.UseVisualStyleBackColor = true;
+            // 
+            // btRemover
+            // 
+            this.btRemover.Location = new System.Drawing.Point(82, 9);
+            this.btRemover.Margin = new System.Windows.Forms.Padding(2);
+            this.btRemover.Name = "btRemover";
+            this.btRemover.Size = new System.Drawing.Size(67, 35);
+            this.btRemover.TabIndex = 12;
+            this.btRemover.Text = "Remover";
+            this.btRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
+            // 
+            // btAdicionar
+            // 
+            this.btAdicionar.Location = new System.Drawing.Point(10, 9);
+            this.btAdicionar.Margin = new System.Windows.Forms.Padding(2);
+            this.btAdicionar.Name = "btAdicionar";
+            this.btAdicionar.Size = new System.Drawing.Size(67, 35);
+            this.btAdicionar.TabIndex = 15;
+            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.UseVisualStyleBackColor = true;
+            this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
+            // 
             // TelaListaPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.dgListaPedidos);
             this.Controls.Add(this.btAlterar);
             this.Controls.Add(this.btRemover);
@@ -127,5 +140,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.Button btAdicionar;
     }
 }

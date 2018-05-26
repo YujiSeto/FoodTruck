@@ -38,18 +38,20 @@ namespace FoodTruck.Grafico
             this.cbLanches = new System.Windows.Forms.ComboBox();
             this.btAdicionaBebida = new System.Windows.Forms.Button();
             this.btAdicionaLanche = new System.Windows.Forms.Button();
-            this.dgBebidas = new System.Windows.Forms.DataGridView();
+            this.dgPedidoBebidas = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tamanho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgLanches = new System.Windows.Forms.DataGridView();
+            this.dgPedidoLanches = new System.Windows.Forms.DataGridView();
             this.NomeLanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorLanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).BeginInit();
+            this.btRemoverBebidaSelecionada = new System.Windows.Forms.Button();
+            this.btRemoverLanche = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidoBebidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidoLanches)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -88,7 +90,7 @@ namespace FoodTruck.Grafico
             this.cbClientes.Location = new System.Drawing.Point(63, 20);
             this.cbClientes.Margin = new System.Windows.Forms.Padding(2);
             this.cbClientes.Name = "cbClientes";
-            this.cbClientes.Size = new System.Drawing.Size(186, 21);
+            this.cbClientes.Size = new System.Drawing.Size(496, 21);
             this.cbClientes.TabIndex = 5;
             // 
             // cbBebidas
@@ -97,7 +99,7 @@ namespace FoodTruck.Grafico
             this.cbBebidas.Location = new System.Drawing.Point(63, 51);
             this.cbBebidas.Margin = new System.Windows.Forms.Padding(2);
             this.cbBebidas.Name = "cbBebidas";
-            this.cbBebidas.Size = new System.Drawing.Size(186, 21);
+            this.cbBebidas.Size = new System.Drawing.Size(213, 21);
             this.cbBebidas.TabIndex = 6;
             // 
             // cbLanches
@@ -106,45 +108,45 @@ namespace FoodTruck.Grafico
             this.cbLanches.Location = new System.Drawing.Point(346, 51);
             this.cbLanches.Margin = new System.Windows.Forms.Padding(2);
             this.cbLanches.Name = "cbLanches";
-            this.cbLanches.Size = new System.Drawing.Size(186, 21);
+            this.cbLanches.Size = new System.Drawing.Size(213, 21);
             this.cbLanches.TabIndex = 7;
             // 
             // btAdicionaBebida
             // 
-            this.btAdicionaBebida.Location = new System.Drawing.Point(253, 52);
+            this.btAdicionaBebida.Location = new System.Drawing.Point(62, 75);
             this.btAdicionaBebida.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionaBebida.Name = "btAdicionaBebida";
-            this.btAdicionaBebida.Size = new System.Drawing.Size(23, 19);
+            this.btAdicionaBebida.Size = new System.Drawing.Size(83, 19);
             this.btAdicionaBebida.TabIndex = 8;
-            this.btAdicionaBebida.Text = "+";
+            this.btAdicionaBebida.Text = "Adicionar";
             this.btAdicionaBebida.UseVisualStyleBackColor = true;
             this.btAdicionaBebida.Click += new System.EventHandler(this.btAdicionaBebida_Click);
             // 
             // btAdicionaLanche
             // 
-            this.btAdicionaLanche.Location = new System.Drawing.Point(536, 52);
+            this.btAdicionaLanche.Location = new System.Drawing.Point(346, 74);
             this.btAdicionaLanche.Margin = new System.Windows.Forms.Padding(2);
             this.btAdicionaLanche.Name = "btAdicionaLanche";
-            this.btAdicionaLanche.Size = new System.Drawing.Size(23, 19);
+            this.btAdicionaLanche.Size = new System.Drawing.Size(87, 19);
             this.btAdicionaLanche.TabIndex = 9;
-            this.btAdicionaLanche.Text = "+";
+            this.btAdicionaLanche.Text = "Adicionar";
             this.btAdicionaLanche.UseVisualStyleBackColor = true;
             this.btAdicionaLanche.Click += new System.EventHandler(this.btAdicionaLanche_Click);
             // 
-            // dgBebidas
+            // dgPedidoBebidas
             // 
-            this.dgBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgPedidoBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPedidoBebidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.Tamanho,
             this.Valor});
-            this.dgBebidas.Location = new System.Drawing.Point(14, 99);
-            this.dgBebidas.Margin = new System.Windows.Forms.Padding(2);
-            this.dgBebidas.Name = "dgBebidas";
-            this.dgBebidas.RowTemplate.Height = 24;
-            this.dgBebidas.Size = new System.Drawing.Size(262, 215);
-            this.dgBebidas.TabIndex = 10;
-            this.dgBebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBebidas_CellContentClick);
+            this.dgPedidoBebidas.Location = new System.Drawing.Point(14, 99);
+            this.dgPedidoBebidas.Margin = new System.Windows.Forms.Padding(2);
+            this.dgPedidoBebidas.Name = "dgPedidoBebidas";
+            this.dgPedidoBebidas.RowTemplate.Height = 24;
+            this.dgPedidoBebidas.Size = new System.Drawing.Size(262, 215);
+            this.dgPedidoBebidas.TabIndex = 10;
+            this.dgPedidoBebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBebidas_CellContentClick);
             // 
             // Nome
             // 
@@ -166,18 +168,18 @@ namespace FoodTruck.Grafico
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
-            // dgLanches
+            // dgPedidoLanches
             // 
-            this.dgLanches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLanches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgPedidoLanches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPedidoLanches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeLanche,
             this.ValorLanche});
-            this.dgLanches.Location = new System.Drawing.Point(300, 99);
-            this.dgLanches.Margin = new System.Windows.Forms.Padding(2);
-            this.dgLanches.Name = "dgLanches";
-            this.dgLanches.RowTemplate.Height = 24;
-            this.dgLanches.Size = new System.Drawing.Size(260, 215);
-            this.dgLanches.TabIndex = 11;
+            this.dgPedidoLanches.Location = new System.Drawing.Point(300, 99);
+            this.dgPedidoLanches.Margin = new System.Windows.Forms.Padding(2);
+            this.dgPedidoLanches.Name = "dgPedidoLanches";
+            this.dgPedidoLanches.RowTemplate.Height = 24;
+            this.dgPedidoLanches.Size = new System.Drawing.Size(260, 215);
+            this.dgPedidoLanches.TabIndex = 11;
             // 
             // NomeLanche
             // 
@@ -223,16 +225,40 @@ namespace FoodTruck.Grafico
             this.lbTotal.Size = new System.Drawing.Size(0, 13);
             this.lbTotal.TabIndex = 14;
             // 
+            // btRemoverBebidaSelecionada
+            // 
+            this.btRemoverBebidaSelecionada.Location = new System.Drawing.Point(200, 75);
+            this.btRemoverBebidaSelecionada.Margin = new System.Windows.Forms.Padding(2);
+            this.btRemoverBebidaSelecionada.Name = "btRemoverBebidaSelecionada";
+            this.btRemoverBebidaSelecionada.Size = new System.Drawing.Size(77, 19);
+            this.btRemoverBebidaSelecionada.TabIndex = 15;
+            this.btRemoverBebidaSelecionada.Text = "Remover";
+            this.btRemoverBebidaSelecionada.UseVisualStyleBackColor = true;
+            this.btRemoverBebidaSelecionada.Click += new System.EventHandler(this.btRemoverBebidaSelecionada_Click);
+            // 
+            // btRemoverLanche
+            // 
+            this.btRemoverLanche.Location = new System.Drawing.Point(475, 75);
+            this.btRemoverLanche.Margin = new System.Windows.Forms.Padding(2);
+            this.btRemoverLanche.Name = "btRemoverLanche";
+            this.btRemoverLanche.Size = new System.Drawing.Size(85, 19);
+            this.btRemoverLanche.TabIndex = 16;
+            this.btRemoverLanche.Text = "Remover";
+            this.btRemoverLanche.UseVisualStyleBackColor = true;
+            this.btRemoverLanche.Click += new System.EventHandler(this.btRemoverLanche_Click);
+            // 
             // AdicionaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 366);
+            this.ClientSize = new System.Drawing.Size(574, 368);
+            this.Controls.Add(this.btRemoverLanche);
+            this.Controls.Add(this.btRemoverBebidaSelecionada);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.dgLanches);
-            this.Controls.Add(this.dgBebidas);
+            this.Controls.Add(this.dgPedidoLanches);
+            this.Controls.Add(this.dgPedidoBebidas);
             this.Controls.Add(this.btAdicionaLanche);
             this.Controls.Add(this.btAdicionaBebida);
             this.Controls.Add(this.cbLanches);
@@ -245,8 +271,9 @@ namespace FoodTruck.Grafico
             this.Name = "AdicionaPedido";
             this.Text = "AdicionaPedido";
             this.Load += new System.EventHandler(this.AdicionaPedido_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgLanches)).EndInit();
+            this.Shown += new System.EventHandler(this.AdicionaPedido_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidoBebidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidoLanches)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,8 +288,8 @@ namespace FoodTruck.Grafico
         private System.Windows.Forms.ComboBox cbLanches;
         private System.Windows.Forms.Button btAdicionaBebida;
         private System.Windows.Forms.Button btAdicionaLanche;
-        private System.Windows.Forms.DataGridView dgBebidas;
-        private System.Windows.Forms.DataGridView dgLanches;
+        private System.Windows.Forms.DataGridView dgPedidoBebidas;
+        private System.Windows.Forms.DataGridView dgPedidoLanches;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeLanche;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValorLanche;
@@ -271,5 +298,7 @@ namespace FoodTruck.Grafico
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Button btRemoverBebidaSelecionada;
+        private System.Windows.Forms.Button btRemoverLanche;
     }
 }
