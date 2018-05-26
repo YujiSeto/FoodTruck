@@ -50,17 +50,17 @@ namespace FoodTruck.Grafico
 
         private void CarregaDatagrids()
         {
-            dgBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgBebidas.MultiSelect = false;
-            dgBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgBebidas.AutoGenerateColumns = false;
-            dgBebidas.DataSource = pedido.Bebidas.ToList();
+            dgPedidoBebidas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgPedidoBebidas.MultiSelect = false;
+            dgPedidoBebidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgPedidoBebidas.AutoGenerateColumns = false;
+            dgPedidoBebidas.DataSource = pedido.Bebidas.ToList();
 
-            dgLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgLanches.MultiSelect = false;
-            dgLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgLanches.AutoGenerateColumns = false;
-            dgLanches.DataSource = pedido.Lanches.ToList();
+            dgPedidoLanches.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgPedidoLanches.MultiSelect = false;
+            dgPedidoLanches.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgPedidoLanches.AutoGenerateColumns = false;
+            dgPedidoLanches.DataSource = pedido.Lanches.ToList();
 
             CarregaTotal();
         }
@@ -103,6 +103,25 @@ namespace FoodTruck.Grafico
         private void dgBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void AdicionaPedido_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btRemoverBebidaSelecionada_Click(object sender, EventArgs e)
+        {
+            Bebida bebidaSelecionada = (Bebida)this.pedido.Bebidas.ElementAt(dgPedidoBebidas.SelectedRows[0].Index);
+            pedido.Bebidas.Remove(bebidaSelecionada);
+            CarregaDatagrids();
+        }
+
+        private void btRemoverLanche_Click(object sender, EventArgs e)
+        {
+            Lanche lancheSelecionado = (Lanche)this.pedido.Lanches.ElementAt(dgPedidoLanches.SelectedRows[0].Index) /*as Lanche*/;
+            pedido.Lanches.Remove(lancheSelecionado);
+            CarregaDatagrids();
         }
     }
 }
