@@ -19,19 +19,18 @@ namespace FoodTruck.Negocio
             banco.SaveChanges();
             return validacao;
         }
-        /*
+
         public Validacao AlterarPedido(Pedido PedidoAlterado)
         {
             Validacao validacao = new Validacao();
-            Lanche pedidoBanco = BuscaPedidoPorId(PedidoAlterado.Id);
-            pedidoBanco.DataCompra = PedidoAlterado.DataCompra;
+            Pedido pedidoBanco = BuscaPedidoPorId(PedidoAlterado.Id);
             pedidoBanco.Cliente = PedidoAlterado.Cliente;
-            pedidoBanco.Cliente = PedidoAlterado.Cliente;
-
+            pedidoBanco.Bebidas = PedidoAlterado.Bebidas;
+            pedidoBanco.Lanches = PedidoAlterado.Lanches;
             this.banco.SaveChanges();
             return validacao;
         }
-        */
+
         public Validacao RemoverLanche(Lanche lanche)
         {
             Validacao validacao = new Validacao();
@@ -242,19 +241,19 @@ namespace FoodTruck.Negocio
             return this.banco.Clientes.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        public Bebida BuscaBebidaPorId(long id2)
+        public Bebida BuscaBebidaPorId(long id)
         {
-            return this.banco.Bebidas.Where(d => d.Id == id2).FirstOrDefault();
+            return this.banco.Bebidas.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        public Lanche BuscaLanchePorId(long id3)
+        public Lanche BuscaLanchePorId(long id)
         {
-            return this.banco.Lanches.Where(e => e.Id == id3).FirstOrDefault();
+            return this.banco.Lanches.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        public Pedido BuscaPedidoPorId(long id4)
+        public Pedido BuscaPedidoPorId(long id)
         {
-            return this.banco.Pedidos.Where(f => f.Id == id4).FirstOrDefault();
+            return this.banco.Pedidos.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public List<Cliente> TodosOsClientes()

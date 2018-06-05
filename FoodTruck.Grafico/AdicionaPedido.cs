@@ -14,6 +14,7 @@ namespace FoodTruck.Grafico
 {
     public partial class AdicionaPedido : Form
     {
+        public Pedido PedidoSelecionado { get; set; }
         Pedido pedido = new Pedido();
 
         public AdicionaPedido()
@@ -83,7 +84,15 @@ namespace FoodTruck.Grafico
         {
             pedido.Cliente = cbClientes.SelectedItem as Cliente;
             pedido.DataCompra = DateTime.Now;
-            Validacao validacao = Program.Gerenciador.CadastrarPedido(pedido);
+            Validacao validacao;
+            if (PedidoSelecionado == null)
+            {
+                validacao = Program.Gerenciador.CadastrarPedido(pedido);
+            }
+            else
+            {
+                validacao = Program.Gerenciador.AlterarPedido(pedido);
+            }
             if (validacao.Valido)
             {
                 MessageBox.Show("Pedido cadastrado com sucesso!");
@@ -98,16 +107,23 @@ namespace FoodTruck.Grafico
                 }
                 MessageBox.Show(msg, "Erro");
             }
+            this.Close();
         }
 
         private void dgBebidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void AdicionaPedido_Shown(object sender, EventArgs e)
         {
-
+            if (PedidoSelecionado != null)
+            {
+                this.cbClientes.SelectedItem = PedidoSelecionado.Cliente;
+                this.dgPedidoBebidas.DataSource = PedidoSelecionado.Bebidas.ToList();
+                this.dgPedidoLanches.DataSource = PedidoSelecionado.Lanches.ToList();
+                pedido = PedidoSelecionado;
+            }
         }
 
         private void btRemoverBebidaSelecionada_Click(object sender, EventArgs e)
