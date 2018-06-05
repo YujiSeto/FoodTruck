@@ -122,6 +122,7 @@ namespace FoodTruck.Grafico
                 this.cbClientes.SelectedItem = PedidoSelecionado.Cliente;
                 this.dgPedidoBebidas.DataSource = PedidoSelecionado.Bebidas.ToList();
                 this.dgPedidoLanches.DataSource = PedidoSelecionado.Lanches.ToList();
+                this.lbTotal.Text = PedidoSelecionado.ValorTotal.ToString();
                 pedido = PedidoSelecionado;
             }
         }
