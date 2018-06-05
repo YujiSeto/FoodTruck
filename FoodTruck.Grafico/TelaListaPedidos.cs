@@ -13,15 +13,27 @@ namespace FoodTruck.Grafico
 {
     public partial class TelaListaPedidos : Form
     {
+        public Pedido PedidoSelecionado { get; set; }
+
         public TelaListaPedidos()
         {
             InitializeComponent();
         }
 
-        private void AbreTelaInclusaoAlteracao(Pedido pedidoSelecionado)
+        private void AbreTelaInclusaoAlteracao(Pedido PedidoSelecionado)
         {
-
+            AdicionaPedido tela = new AdicionaPedido();
+            tela.MdiParent = this.MdiParent;
+            tela.PedidoSelecionado = PedidoSelecionado;
+            tela.FormClosed += Tela_FormClosed;
+            tela.Show();
         }
+
+        private void Tela_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregarPedidos();
+        }
+
         private void dgListaPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -76,9 +88,16 @@ namespace FoodTruck.Grafico
 
         private void btAdicionar_Click(object sender, EventArgs e)
         {
-            AdicionaPedido tela = new AdicionaPedido();
-            tela.MdiParent = this.MdiParent;
-            tela.Show();
+            AbreTelaInclusaoAlteracao(null);
+        }
+
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                Pedido PedidoSelecionado = (Pedido)dgListaPedidos.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(PedidoSelecionado);
+            }
         }
     }
 }
