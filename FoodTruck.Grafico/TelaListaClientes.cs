@@ -73,8 +73,8 @@ namespace FoodTruck.Grafico
                 DialogResult resultado = MessageBox.Show("Tem certeza?", "Quer remover?", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
-                    Cliente clienteSelecionado = (Cliente)dgClientes.SelectedRows[0].DataBoundItem;
-                    var validacao = Program.Gerenciador.RemoverCliente(clienteSelecionado);
+                    Cliente clienteselecionado = (Cliente)dgClientes.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverCliente(clienteselecionado);
                     if (validacao.Valido)
                     {
                         MessageBox.Show("Cliente removido com sucesso");
